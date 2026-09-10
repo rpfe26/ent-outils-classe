@@ -1,0 +1,6 @@
+# Aperçus générés localement (captures d'écran de contrôle)
+apercus/
+
+# Fichiers système
+.DS_Store
+Thumbs.db

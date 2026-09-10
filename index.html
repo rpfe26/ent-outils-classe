@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="paper">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Espace de classe — Tous les outils</title>
+<meta name="description" content="Accès direct et sans distraction à tous les outils numériques utilisés en classe. Conçu pour la lecture facilitée.">
+<meta name="color-scheme" content="light dark">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=Fraunces:opsz,wght@9..144,400;9..144,600&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<a class="skip-link" href="#outils">Aller directement aux outils</a>
+
+<header class="topbar">
+  <div class="topbar__inner">
+    <a class="brand" href="#" aria-label="Espace de classe, accueil">
+      <span class="brand__mark" aria-hidden="true">EC</span>
+      <span class="brand__text">
+        <strong>Espace de classe</strong>
+        <span>Collège Jean-Moulin · 3<sup>e</sup> B</span>
+      </span>
+    </a>
+
+    <nav class="a11y" aria-label="Confort de lecture">
+      <button type="button" class="a11y__btn" data-action="theme" aria-pressed="false" title="Basculer le thème clair / sombre">
+        <span class="a11y__icon" data-icon="theme" aria-hidden="true"></span>
+        <span class="a11y__label">Thème</span>
+      </button>
+      <div class="a11y__group" role="group" aria-label="Taille du texte">
+        <button type="button" class="a11y__btn a11y__btn--square" data-action="font-down" aria-label="Réduire la taille du texte">A−</button>
+        <button type="button" class="a11y__btn a11y__btn--square" data-action="font-up" aria-label="Augmenter la taille du texte">A+</button>
+      </div>
+      <button type="button" class="a11y__btn" data-action="contrast" aria-pressed="false" title="Renforcer le contraste">
+        <span class="a11y__icon" data-icon="contrast" aria-hidden="true"></span>
+        <span class="a11y__label">Contraste</span>
+      </button>
+      <button type="button" class="a11y__btn" data-action="reading" aria-pressed="false" title="Espacement adapté à la lecture (dyslexie)">
+        <span class="a11y__icon" data-icon="reading" aria-hidden="true"></span>
+        <span class="a11y__label">Lecture</span>
+      </button>
+      <button type="button" class="a11y__btn a11y__btn--ghost" data-action="reset" title="Réinitialiser les réglages d'affichage">
+        <span class="a11y__icon" data-icon="reset" aria-hidden="true"></span>
+        <span class="a11y__label">Réinitialiser</span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero" aria-labelledby="hero-title">
+    <p class="hero__eyebrow" id="today">Chargement…</p>
+    <h1 id="hero-title">Tous les outils de la classe, au même endroit.</h1>
+    <p class="hero__lead">
+      Un accès direct aux ressources utilisées en cours. Pas de publicité, pas d'élément
+      qui clignote : uniquement ce qu'il faut pour travailler sereinement.
+    </p>
+
+    <form class="search" role="search" onsubmit="return false;">
+      <span class="search__icon" data-icon="search" aria-hidden="true"></span>
+      <label class="visually-hidden" for="q">Rechercher un outil</label>
+      <input id="q" name="q" type="search" autocomplete="off" spellcheck="false"
+             placeholder="Rechercher un outil (ex. GeoGebra, devoirs, code…)">
+      <button type="button" class="search__clear" data-action="clear-search" hidden aria-label="Effacer la recherche">Effacer</button>
+    </form>
+
+    <ul class="stats" aria-label="Résumé">
+      <li><strong id="stat-tools">—</strong> outils</li>
+      <li><strong id="stat-cats">—</strong> catégories</li>
+      <li><strong>0</strong> distraction</li>
+    </ul>
+  </section>
+
+  <section class="catalog" aria-labelledby="outils-title">
+    <div class="catalog__head">
+      <h2 id="outils-title">Outils disponibles</h2>
+      <p class="catalog__count" id="count" aria-live="polite"></p>
+    </div>
+
+    <div class="filters" role="group" aria-label="Filtrer par matière ou usage" id="filters"></div>
+
+    <ul class="grid" id="outils"></ul>
+    <p class="empty" id="empty" hidden>Aucun outil ne correspond à cette recherche.</p>
+  </section>
+
+  <section class="help" aria-labelledby="help-title">
+    <h2 id="help-title">Besoin d'aide&nbsp;?</h2>
+    <div class="help__grid">
+      <article class="help__card">
+        <h3>Un souci avec un devoir</h3>
+        <p>Écrire au professeur principal depuis la messagerie de l'ENT, ou poser la question en début de cours.</p>
+      </article>
+      <article class="help__card">
+        <h3>Un problème de connexion</h3>
+        <p>Se rendre à la vie scolaire (bureau B12) avec sa carte d'élève pour réinitialiser l'accès.</p>
+      </article>
+      <article class="help__card">
+        <h3>Un mot de passe oublié</h3>
+        <p>Utiliser la page d'assistance de l'ENT, rubrique «&nbsp;accès et identifiants&nbsp;».</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <p>
+    Espace de classe · page locale, sans publicité ni suivi.
+    Les réglages d'affichage (taille, contraste, lecture) sont enregistrés sur cet appareil.
+  </p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
